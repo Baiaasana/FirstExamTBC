@@ -58,10 +58,32 @@ class Math {
         return num2.toInt()
     }
 
+    fun reverse2(number: Int): Int {
+        var num = number
+        var reversed = 0
+
+        while (num != 0) {
+            val digit = num % 10
+            reversed = reversed * 10 + digit
+            num /= 10
+        }
+
+        return reversed
+    }
+
     fun checkPolyndrom(str: String): String{
 
         if (str == str.reversed()) return  "$str is polyndrom."
         return "$str is polyndrom"
+
+    }
+    
+    fun checkPolyndrom2(str: String): String{
+
+        val onePart = str.substring(0, str.length/2)
+        val secondPart = str.substring(str.length/2, str.length).reversed()
+        if (onePart == secondPart) return "$str is polyndrom"
+        else return "$str is not polyndrom"
 
     }
 
@@ -71,6 +93,7 @@ class Math {
         else
             return num
     }
+
 
 }
 
